@@ -66,6 +66,7 @@ fi
 # these are not presistent in heroku
 mkdir -p ~/.julia/config
 set +H
+export JULIA_NUM_PRECOMPILE_TASKS=1
 julia --project=$(pwd) -e "using Pkg; Pkg.instantiate();"
 
 cp -r ~/.julia ${BUILD_DIR}/.julia
